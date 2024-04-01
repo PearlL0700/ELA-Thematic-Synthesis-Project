@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #646464;
+            position: relative; /* Add position relative to allow absolute positioning of button */
+        }
+
+        canvas {
+            background: url("map.png") no-repeat;
+            background-size: cover;
+            border: 2px solid black;
+        }
+
+        #LOFT {
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 560px;
+            right: 350px;
+        }
+        #EG {
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 240px;
+            right: 398px;
+        }
+        #LS {
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 500px;
+            left: 435px;
+        }
+        #WT {
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 285px;
+            left: 435px;
+        }
+        #IntroButt {
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 280px;
+            left: 690px;
+        }
+        #S {
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 390px;
+            left: 690px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Museum: Affects of Fear</h1>
+    <canvas  width = "900" height = "700"></canvas>
+    <img id = "LOFT" src="LOTFButt.png" alt="LOFT Button">
+    <img id = "EG" src="EGButt.png" alt="EG Button">
+    <img id = "WT" src="WTButt.png" alt="WT Button">
+    <img id = "LS" src="NAButt.png" alt="LS Button">
+    <img id = "IntroButt" src="IntroButt.png" alt="Intro Button">
+    <img id = "S" src="Synthesis.png" alt="Synthesis Button">
+<script>
+    var canvas = document.querySelector("canvas");
+    var drawingSurface = canvas.getContext("2d");
+    var spriteObject = {
+        x: 0,
+        y: 0,
+        width: 60,
+        height: 60
+    };
+    var sm = Object.create(spriteObject);
+    sm.x = 355;
+    sm.y = 535;
+    var image = new Image();
+    image.addEventListener("load", loadHandler, false);
+    image.src = "stickman.png";
+
+    var characterRect = {top: 0, bottom: 0, left: 0, right: 0};
+
+    var Xspeed = 0;
+    var Yspeed = 0;
+    var moveLeft = false;
+    var moveRight = false;
+    var moveUp = false;
+    var moveDown = false;
+
+    window.addEventListener("keydown", function (e) {
+        switch (e.key) {
+            case "ArrowUp":
+                moveUp = true;
+                break;
+            case "ArrowDown":
+                moveDown = true;
+                break;
+            case "ArrowLeft":
+                moveLeft = true;
+                break;
+            case "ArrowRight":
+                moveRight = true;
+                break;
+        }
+    }, false);
+
+    window.addEventListener("keyup", function (e) {
+        switch (e.key) {
+            case "ArrowUp":
+                moveUp = false;
+                break;
+            case "ArrowDown":
+                moveDown = false;
+                break;
+            case "ArrowLeft":
+                moveLeft = false;
+                break;
+            case "ArrowRight":
+                moveRight = false;
+                break;
+        }
+    }, false);
+
+    function loadHandler() {
+        update();
+    }
+
+    function update() {
+        window.requestAnimationFrame(update, canvas);
+        sm.x += Xspeed;
+        sm.y += Yspeed;
+
+        if (moveUp && !moveDown) {
+            Yspeed = -5;
+        }
+        if (moveDown && !moveUp) {
+            Yspeed = 5;
+        }
+        if (moveLeft && !moveRight) {
+            Xspeed = -5;
+        }
+        if (moveRight && !moveLeft) {
+            Xspeed = 5;
+        }
+        if (!moveUp && !moveDown) {
+            Yspeed = 0;
+        }
+        if (!moveLeft && !moveRight) {
+            Xspeed = 0;
+        }
+        if (sm.y < 0) {
+            sm.y = 0;
+        }
+        if (sm.x < 0) {
+            sm.x = 0;
+        }
+        if (sm.x + sm.width > canvas.width) {
+            sm.x = canvas.width - sm.width;
+        }
+        if (sm.y + sm.height > canvas.height) {
+            sm.y = canvas.height - sm.height;
+        }
+        
+        // Function to check if the character is touching the button
+        characterRect = {
+            top: sm.y,
+            bottom: sm.y + sm.height,
+            left: sm.x,
+            right: sm.x + sm.width
+        };
+        
+        // Check if the character's edges overlap with the button's edges
+        render();
+    }
+
+    function render() {
+        drawingSurface.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+        drawingSurface.drawImage(
+            image,
+            Math.floor(sm.x), Math.floor(sm.y),
+            sm.width, sm.height
+        );
+    }
+
+    document.getElementById('LOFT').addEventListener('click', function () {
+        if (characterRect.right >= 710 && characterRect.left <= 775 &&
+            characterRect.bottom >= 500 && characterRect.top <= 550) 
+        {
+            window.location.href = 'file:///Users/pearllam/ELA%20Project/LOTF.html';
+        } else {
+            alert('Stickman is not touching a button!');
+        }
+    });
+
+    document.getElementById('EG').addEventListener('click', function () {
+        if (characterRect.right >= 650 && characterRect.left <= 755 &&
+            characterRect.bottom >= 190 && characterRect.top <= 240 )
+        {
+            window.location.href = "file:///Users/pearllam/ELA%20Project/Ender's%20Game.html";
+        } else {
+            alert('Stickman is not touching a button!');
+        }
+    });
+
+    document.getElementById('LS').addEventListener('click', function () {
+        if (characterRect.right >= 170 && characterRect.left <= 265 &&
+            characterRect.bottom >= 450 && characterRect.top <= 505)
+        {
+            window.location.href = "file:///Users/pearllam/ELA%20Project/Last%20Source.html";
+        } else {
+            alert('Stickman is not touching a button!');
+        }
+    });
+
+    document.getElementById('WT').addEventListener('click', function () {
+        if (characterRect.right >= 170 && characterRect.left <= 255 &&
+            characterRect.bottom >= 230 && characterRect.top <= 290)
+        {
+            window.location.href = "file:///Users/pearllam/ELA%20Project/Salem%20Witch%20Trials.html";
+        } else {
+            alert('Stickman is not touching a button!');
+        }
+    });
+
+    document.getElementById('IntroButt').addEventListener('click', function () {
+        if (characterRect.right >= 430 && characterRect.left <= 520 &&
+            characterRect.bottom >= 225 && characterRect.top <= 275 )
+        {
+            window.location.href = "file:///Users/pearllam/ELA%20Project/intro.html";
+        } else {
+            alert('Stickman is not touching a button!');
+        }
+    });
+
+    document.getElementById('S').addEventListener('click', function () {
+        if (characterRect.right >= 430 && characterRect.left <= 520 &&
+            characterRect.bottom >= 330 && characterRect.top <= 385)
+        {
+            window.location.href = "file:///Users/pearllam/ELA%20Project/Synthesis.html";
+        } else {
+            alert('Stickman is not touching a button!');
+        }
+    });
+</script>
+</body>
+</html>
