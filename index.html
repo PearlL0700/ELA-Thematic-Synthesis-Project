@@ -12,9 +12,12 @@
     <div>
         <img src = "./images/Island.png" class = "island"/>
         <img src = "./images/warPlane.png" class = "warPlane"/>
-        <a href = "./intro.html" target = "_blank">
-            <img src = "./images/Butt1.png" class = "butt1"/>
-        </a>
+        <img src = "./images/Butt1.png" class = "butt1"/>
+        <script>
+        document.getElementById('butt1').addEventListener('click', function (){
+            window.location.href = "./intro.html"
+        });
+        </script>
     </div>
 </body>
 </html>
