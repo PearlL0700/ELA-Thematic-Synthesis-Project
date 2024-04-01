@@ -23,9 +23,9 @@
             background: none;
             width: 100px;
             height: 50px;
-            position: absolute;
-            top: 560px;
-            right: 350px;
+            position: relative;
+            top: -200px;
+            right: -570px;
         }
         #EG {
             cursor: pointer;
@@ -33,9 +33,9 @@
             background: none;
             width: 100px;
             height: 50px;
-            position: absolute;
-            top: 240px;
-            right: 398px;
+            position: relative;
+            top: -520px;
+            right: -418px;
         }
         #LS {
             cursor: pointer;
@@ -43,9 +43,9 @@
             background: none;
             width: 100px;
             height: 50px;
-            position: absolute;
-            top: 500px;
-            left: 435px;
+            position: relative;
+            top: -255px;
+            left: -280px;
         }
         #WT {
             cursor: pointer;
@@ -53,9 +53,9 @@
             background: none;
             width: 100px;
             height: 50px;
-            position: absolute;
-            top: 285px;
-            left: 435px;
+            position: relative;
+            top: -475px;
+            left: -170px;
         }
         #IntroButt {
             cursor: pointer;
@@ -63,9 +63,9 @@
             background: none;
             width: 100px;
             height: 50px;
-            position: absolute;
-            top: 280px;
-            left: 690px;
+            position: relative;
+            top: -475px;
+            left: -130px;
         }
         #S {
             cursor: pointer;
@@ -73,22 +73,24 @@
             background: none;
             width: 100px;
             height: 50px;
-            position: absolute;
-            top: 390px;
-            left: 690px;
+            position: relative;
+            top: -375px;
+            left: -232px;
         }
     </style>
 </head>
 <body>
 
-    <h1> Museum: Affects of Fear</h1>
+    <h1> Museum: Effects of Fear</h1>
     <canvas  width = "900" height = "700"></canvas>
-    <img id = "LOFT" src="./images/LOTFButt.png" alt="LOFT Button">
-    <img id = "EG" src="./images/EGButt.png" alt="EG Button">
-    <img id = "WT" src="./images/WTButt.png" alt="WT Button">
-    <img id = "LS" src="./images/NAButt.png" alt="LS Button">
-    <img id = "IntroButt" src="./images/IntroButt.png" alt="Intro Button">
-    <img id = "S" src="./images/Synthesis.png" alt="Synthesis Button">
+    <div>
+        <img id = "LOFT" src="./images/LOTFButt.png" alt="LOFT Button">
+        <img id = "EG" src="./images/EGButt.png" alt="EG Button">
+        <img id = "WT" src="./images/WTButt.png" alt="WT Button">
+        <img id = "LS" src="./images/NAButt.png" alt="LS Button">
+        <img id = "IntroButt" src="./images/IntroButt.png" alt="Intro Button">
+        <img id = "S" src="./images/Synthesis.png" alt="Synthesis Button">
+    </div>
 <script>
     var canvas = document.querySelector("canvas");
     var drawingSurface = canvas.getContext("2d");
