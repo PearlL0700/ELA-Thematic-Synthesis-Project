@@ -12,7 +12,7 @@
         }
 
         canvas {
-            background: url("map.png") no-repeat;
+            background: url("images/map.png") no-repeat;
             background-size: cover;
             border: 2px solid black;
         }
@@ -83,12 +83,12 @@
 
     <h1> Museum: Affects of Fear</h1>
     <canvas  width = "900" height = "700"></canvas>
-    <img id = "LOFT" src="LOTFButt.png" alt="LOFT Button">
-    <img id = "EG" src="EGButt.png" alt="EG Button">
-    <img id = "WT" src="WTButt.png" alt="WT Button">
-    <img id = "LS" src="NAButt.png" alt="LS Button">
-    <img id = "IntroButt" src="IntroButt.png" alt="Intro Button">
-    <img id = "S" src="Synthesis.png" alt="Synthesis Button">
+    <img id = "LOFT" src="images/LOTFButt.png" alt="LOFT Button">
+    <img id = "EG" src="images/EGButt.png" alt="EG Button">
+    <img id = "WT" src="images/WTButt.png" alt="WT Button">
+    <img id = "LS" src="images/NAButt.png" alt="LS Button">
+    <img id = "IntroButt" src="images/IntroButt.png" alt="Intro Button">
+    <img id = "S" src="images/Synthesis.png" alt="Synthesis Button">
 <script>
     var canvas = document.querySelector("canvas");
     var drawingSurface = canvas.getContext("2d");
@@ -103,7 +103,7 @@
     sm.y = 535;
     var image = new Image();
     image.addEventListener("load", loadHandler, false);
-    image.src = "stickman.png";
+    image.src = "images/stickman.png";
 
     var characterRect = {top: 0, bottom: 0, left: 0, right: 0};
 
