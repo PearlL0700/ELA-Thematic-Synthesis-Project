@@ -40,8 +40,11 @@
     <img src = "./images/EGCover.png" class = "cov"/>
     <img src = "./images/WitchTrial.png" class = "cov"/>
     <img src = "./images/WitchTrial.png" class = "cov"/>
-    <a href = "./nav.html" target = "_blank">
-        <img src = "./images/Butt1.png" class = "butt1"/>
-    </a>
+    <img id = "butt2" src = "./images/Butt1.png" class = "butt1"/>
+    <script>
+        document.getElementById('butt2').addEventListener('click', function (){
+            window.location.href = "./nav.html"
+        });
+    </script>
 </body>
 </html>

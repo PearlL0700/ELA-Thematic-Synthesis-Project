@@ -7,8 +7,11 @@
     <link rel = "stylesheet" type = "text/css" href = "style.css">
 </head>
 <body>
-    <a href = "./nav.html" target = "_blank">
-        <img src = "./images/Butt1.png" class = "butt1"/>
-    </a>
+    <img id = "butt6" src = "./images/Butt1.png" class = "butt1"/>
+    <script>
+        document.getElementById('butt6').addEventListener('click', function (){
+            window.location.href = "./nav.html"
+        });
+    </script>
 </body>
 </html>
