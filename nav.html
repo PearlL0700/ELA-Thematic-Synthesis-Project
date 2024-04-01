@@ -12,7 +12,7 @@
         }
 
         canvas {
-            background: url("images/map.png") no-repeat;
+            background: url("./images/map.png") no-repeat;
             background-size: cover;
             border: 2px solid black;
         }
@@ -83,12 +83,12 @@
 
     <h1> Museum: Affects of Fear</h1>
     <canvas  width = "900" height = "700"></canvas>
-    <img id = "LOFT" src="images/LOTFButt.png" alt="LOFT Button">
-    <img id = "EG" src="images/EGButt.png" alt="EG Button">
-    <img id = "WT" src="images/WTButt.png" alt="WT Button">
-    <img id = "LS" src="images/NAButt.png" alt="LS Button">
-    <img id = "IntroButt" src="images/IntroButt.png" alt="Intro Button">
-    <img id = "S" src="images/Synthesis.png" alt="Synthesis Button">
+    <img id = "LOFT" src="./images/LOTFButt.png" alt="LOFT Button">
+    <img id = "EG" src="./images/EGButt.png" alt="EG Button">
+    <img id = "WT" src="./images/WTButt.png" alt="WT Button">
+    <img id = "LS" src="./images/NAButt.png" alt="LS Button">
+    <img id = "IntroButt" src="./images/IntroButt.png" alt="Intro Button">
+    <img id = "S" src="./images/Synthesis.png" alt="Synthesis Button">
 <script>
     var canvas = document.querySelector("canvas");
     var drawingSurface = canvas.getContext("2d");
@@ -103,7 +103,7 @@
     sm.y = 535;
     var image = new Image();
     image.addEventListener("load", loadHandler, false);
-    image.src = "images/stickman.png";
+    image.src = "./images/stickman.png";
 
     var characterRect = {top: 0, bottom: 0, left: 0, right: 0};
 
@@ -213,7 +213,7 @@
         if (characterRect.right >= 710 && characterRect.left <= 775 &&
             characterRect.bottom >= 500 && characterRect.top <= 550) 
         {
-            window.location.href = 'file:///Users/pearllam/ELA%20Project/LOTF.html';
+            window.location.href = './LOTF.html';
         } else {
             alert('Stickman is not touching a button!');
         }
@@ -223,7 +223,7 @@
         if (characterRect.right >= 650 && characterRect.left <= 755 &&
             characterRect.bottom >= 190 && characterRect.top <= 240 )
         {
-            window.location.href = "file:///Users/pearllam/ELA%20Project/Ender's%20Game.html";
+            window.location.href = "./Ender's%20Game.html";
         } else {
             alert('Stickman is not touching a button!');
         }
@@ -233,7 +233,7 @@
         if (characterRect.right >= 170 && characterRect.left <= 265 &&
             characterRect.bottom >= 450 && characterRect.top <= 505)
         {
-            window.location.href = "file:///Users/pearllam/ELA%20Project/Last%20Source.html";
+            window.location.href = "./Last%20Source.html";
         } else {
             alert('Stickman is not touching a button!');
         }
@@ -243,7 +243,7 @@
         if (characterRect.right >= 170 && characterRect.left <= 255 &&
             characterRect.bottom >= 230 && characterRect.top <= 290)
         {
-            window.location.href = "file:///Users/pearllam/ELA%20Project/Salem%20Witch%20Trials.html";
+            window.location.href = "./Salem%20Witch%20Trials.html";
         } else {
             alert('Stickman is not touching a button!');
         }
@@ -253,7 +253,7 @@
         if (characterRect.right >= 430 && characterRect.left <= 520 &&
             characterRect.bottom >= 225 && characterRect.top <= 275 )
         {
-            window.location.href = "file:///Users/pearllam/ELA%20Project/intro.html";
+            window.location.href = "./intro.html";
         } else {
             alert('Stickman is not touching a button!');
         }
@@ -263,7 +263,7 @@
         if (characterRect.right >= 430 && characterRect.left <= 520 &&
             characterRect.bottom >= 330 && characterRect.top <= 385)
         {
-            window.location.href = "file:///Users/pearllam/ELA%20Project/Synthesis.html";
+            window.location.href = "./Synthesis.html";
         } else {
             alert('Stickman is not touching a button!');
         }
